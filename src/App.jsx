@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <p>Exavier's School</p>
-      <h1 className='text-xl font-bold'>Of Occult Sciences</h1>
+      <h1 class='text-xl font-bold'>Of Occult Sciences</h1>
     </>
   )
 }
