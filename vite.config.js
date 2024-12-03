@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   base: "/astrology/",
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 })
