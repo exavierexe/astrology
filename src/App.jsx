@@ -1,10 +1,16 @@
 import './App.css'
+import { CardWithForm } from './components/cardwithform'
+
+
 
 function App() {
   return (
     <>
-      <p>Exavier's School</p>
-      <h1 class='text-xl font-bold'>Of Occult Sciences</h1>
+    
+      <h1 class='text-xl font-bold'>Exavier's School<br></br> Of Occult Sciences</h1>
+      <br></br>
+      <br></br>
+      <CardWithForm></CardWithForm>
       
     </>
   )
