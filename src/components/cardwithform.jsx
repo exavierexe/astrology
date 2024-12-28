@@ -62,7 +62,7 @@ export function CardWithForm() {
     
     
   function handleSubmit(){
-    axios.post('postgresql://neondb_owner:4meBOdfAQq2j@ep-orange-frog-a5z7c1dw.us-east-2.aws.neon.tech/neondb?sslmode=require', {newApp})
+    console.log(newApp)
   }
  
   return (
