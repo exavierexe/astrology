@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { useState } from "react"
+import axios from "axios"
 
 
 
@@ -54,13 +55,14 @@ export function CardWithForm() {
   const [questions, setQuestions] = useState("");
   function handleQuestionsChange(event){
     setQuestions(event.target.value);
+    
   }
-  const [application, setApplication] = useState([]);
+  
+  const newApp = {uname: uname, phone: phone, email: email, birthday: birthday, time: time, location: location, questions: questions};
+    
     
   function handleSubmit(){
-    const newApp = {uname: uname, phone: phone, email: email, birthday: birthday, time: time, location: location, questions: questions};
-    setApplication(newApp);
-    console.log(application)
+    axios.post('postgresql://neondb_owner:4meBOdfAQq2j@ep-orange-frog-a5z7c1dw.us-east-2.aws.neon.tech/neondb?sslmode=require', {newApp})
   }
  
   return (
@@ -70,7 +72,7 @@ export function CardWithForm() {
         <CardDescription>$325</CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="uname">Name</Label>
